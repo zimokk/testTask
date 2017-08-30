@@ -20,6 +20,9 @@ export class DashboardComponent implements OnInit {
               private router: Router,
               private dragulaService: DragulaService) {
     this.retriveShops();
+
+    const bag: any = dragulaService.find('shops-list');
+    if (bag !== undefined ) dragulaService.destroy('shops-list');
     dragulaService.setOptions('shops-list', {
       revertOnSpill: true
     });
