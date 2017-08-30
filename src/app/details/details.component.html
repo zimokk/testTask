@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="col-lg-8">
+    <h2>Products table</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{product._id}}</td>
+          <td>{{product.name}}</td>
+          <td>{{product.description}}</td>
+          <td>
+            <button class="btn btn-default" (click)="edit(product)">E</button>
+            <button class="btn btn-danger" (click)="remove(product)">X</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-lg-4">
+    <div>
+      <h1>Create new product</h1>
+      <form (ngSubmit)="onCreateSubmit()" #productCreateForm="ngForm">
+        <div class="form-group">
+          <label>
+            Name
+            <input type="text" class="form-control"
+                   required
+                   [(ngModel)]="newProduct.name" name="name"
+                   #name="ngModel">
+          </label>
+          <label>
+            Description
+            <input type="text" class="form-control"
+                   required
+                   [(ngModel)]="newProduct.description" name="description"
+                   #description="ngModel">
+          </label>
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="!productCreateForm.form.valid">Create</button>
+      </form>
+    </div>
+    <div>
+      <h1>Edit product</h1>
+      <form (ngSubmit)="onUpdateSubmit()" #productUpdateForm="ngForm">
+        <div class="form-group">
+          <label>
+            Name
+            <input type="text" class="form-control"
+                   required
+                   [(ngModel)]="editedProduct.name" name="name"
+                   #name="ngModel">
+          </label>
+          <label>
+            Description
+            <input type="text" class="form-control"
+                   required
+                   [(ngModel)]="editedProduct.description" name="description"
+                   #description="ngModel">
+          </label>
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="!productUpdateForm.form.valid">Update</button>
+      </form>
+    </div>
+  </div>
+</div>

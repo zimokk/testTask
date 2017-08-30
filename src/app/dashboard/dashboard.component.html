@@ -1,0 +1,32 @@
+<div class="content-holder">
+  <div class="list-holder" [dragula]='"shops-list"' [dragulaModel]='list'>
+    <div *ngFor="let item of list" class="palette"
+         [attr.data-id]="item._id">
+      <div class="track-number alert-success">{{item.trackNo}}</div>
+      <div class="manager-buttons-holder">
+        <button class="btn btn-info" (click)="showDetails(item)">i</button>
+        <button class="btn btn-default" (click)="editShop(item)">E</button>
+        <button class="btn btn-danger" (click)="removeShop(item)">X</button>
+      </div>
+      <p>
+        {{item.name}}
+      </p>
+      <p>
+        {{item.mode.start}} - {{item.mode.end}}
+      </p>
+      <p>
+        Adress: lat:{{item.adress.lat}} - lng:{{item.adress.lng}}
+      </p>
+    </div>
+  </div>
+
+
+  <div class="manager-holder">
+    <app-shop-managing [editedShop]="editedShop" (onShopEdited)="retriveShops()"></app-shop-managing>
+  </div>
+</div>
+<div class="content">
+  <agm-map [latitude]="initialLat" [longitude]="initialLng">
+    <agm-marker *ngFor="let item of list" [latitude]="item.adress.lat" [longitude]="item.adress.lng"></agm-marker>
+  </agm-map>
+</div>

@@ -1,0 +1,51 @@
+.content-holder{
+  display: flex;
+  flex-direction:row;
+  flex-wrap: nowrap;
+}
+.list-holder{
+  width: 65vw;
+  max-height: 80vh;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 0 0 5vw 0;
+}
+.palette{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 12vw;
+  height:12vw;
+  border: 1px solid black;
+  margin: 1vw;
+  min-height: 200px;
+  min-width: 200px;
+  cursor: move;
+}
+.gu-transit{
+  background-color: lightgrey;
+  opacity: 0.5 !important;
+}
+.track-number{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 5px;
+  border-radius: 10%;
+  border: solid darkgreen 1px;
+}
+.manager-buttons-holder{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.manager-holder{
+  width: 35vw;
+}
+agm-map {
+  height: 50vh;
+}

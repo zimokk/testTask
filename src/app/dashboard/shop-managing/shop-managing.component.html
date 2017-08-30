@@ -1,0 +1,97 @@
+<div>
+  <div>
+    <h1>Create new shop form</h1>
+    <form (ngSubmit)="onSubmitCreate()" #shopCreateForm="ngForm">
+      <div class="form-group">
+        <label>
+          Name
+          <input type="text" class="form-control"
+                 required
+                 [(ngModel)]="newShop.name" name="name"
+                 #name="ngModel">
+        </label>
+        <div class="content">
+          <label>
+            Start
+            <input type="number" class="form-control" min="0" max="24"
+                   required
+                   [(ngModel)]="newShop.mode.start" name="mode.start"
+                   #mode.start="ngModel">
+          </label>
+          <label>
+            End
+            <input type="number" class="form-control" min="0" max="24"
+                   required
+                   [(ngModel)]="newShop.mode.end" name="mode.end"
+                   #mode.end="ngModel">
+          </label>
+        </div>
+        <div class="content">
+          <label>
+            Latitude
+            <input type="number" class="form-control" min="-90" max="90"
+                   required
+                   [(ngModel)]="newShop.adress.lat" name="adress.lat"
+                   #adress.lat="ngModel">
+          </label>
+          <label>
+            Longitude
+            <input type="number" class="form-control" min="-180" max="180"
+                   required
+                   [(ngModel)]="newShop.adress.lng" name="adress.lng"
+                   #adress.lng="ngModel">
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="!shopCreateForm.form.valid">Submit</button>
+    </form>
+  </div>
+  <div>
+    <h1>Edit shop form</h1>
+    <form (ngSubmit)="onSubmitEdit()" #shopEditForm="ngForm">
+      <div class="form-group">
+        <label>
+          Name
+          <input type="text" class="form-control"
+               required
+               [(ngModel)]="editedShop.name" name="name"
+               #name="ngModel">
+        </label>
+      </div>
+      <div class="content">
+        <label>
+          Start
+          <input type="number" class="form-control" min="0" max="24"
+                 required
+                 [(ngModel)]="editedShop.mode.start" name="mode.start"
+                 #mode.start="ngModel">
+        </label>
+        <label>
+          End
+          <input type="number" class="form-control" min="0" max="24"
+                 required
+                 [(ngModel)]="editedShop.mode.end" name="mode.end"
+                 #mode.end="ngModel">
+        </label>
+      </div>
+
+      <div class="content">
+        <label>
+          Latitude
+          <input type="number" class="form-control" min="-90" max="90"
+                 required
+                 [(ngModel)]="editedShop.adress.lat" name="adress.lat"
+                 #adress.lat="ngModel">
+        </label>
+        <label>
+          Longitude
+          <input type="number" class="form-control" min="-180" max="180"
+                 required
+                 [(ngModel)]="editedShop.adress.lng" name="adress.lng"
+                 #adress.lng="ngModel">
+        </label>
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="!shopEditForm.form.valid">Submit</button>
+    </form>
+  </div>
+</div>
