@@ -12,8 +12,8 @@ export class ShopService {
         trackNo: 1,
         name: "ProstorE",
         adress: {
-          lat: 7,
-          lng: 24
+          lat: 1,
+          lng: 2
         },
         mode:{
           start: 7,
@@ -24,20 +24,20 @@ export class ShopService {
         trackNo: 3,
         name: "MediaMarkt",
         adress: {
-          lat: 7,
-          lng: 24
+          lat: 2,
+          lng: 1
         },
         mode:{
-          start: 0,
-          end: 24
+          start: 1,
+          end: 1
         }
       },{
         _id: 3,
         trackNo: 2,
         name: "Test 2",
         adress: {
-          lat: 7,
-          lng: 24
+          lat: 2,
+          lng: 2
         },
         mode:{
           start: 0,
@@ -48,8 +48,8 @@ export class ShopService {
         trackNo: 4,
         name: "Test 4",
         adress: {
-          lat: 7,
-          lng: 24
+          lat: 1.5,
+          lng: 1.5
         },
         mode:{
           start: 0,
@@ -60,8 +60,8 @@ export class ShopService {
         trackNo: 5,
         name: "Test 5",
         adress: {
-          lat: 7,
-          lng: 24
+          lat: 0.5,
+          lng: 1.5
         },
         mode:{
           start: 0,
@@ -72,8 +72,8 @@ export class ShopService {
         trackNo: 6,
         name: "Test 6",
         adress: {
-          lat: 7,
-          lng: 24
+          lat: 0.6,
+          lng: 1.5
         },
         mode:{
           start: 0,
@@ -84,8 +84,8 @@ export class ShopService {
         trackNo: 7,
         name: "Test 7",
         adress: {
-          lat: 7,
-          lng: 24
+          lat: 2,
+          lng: 0
         },
         mode:{
           start: 0,
